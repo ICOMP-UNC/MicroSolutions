@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "lpc17xx_pinsel.h": "c",
+        "sensores.h": "c",
+        "lpc17xx_timer.h": "c",
+        "lpc17xx_adc.h": "c",
+        "config.h": "c",
+        "lpc17xx_gpio.h": "c",
+        "lpc17xx_systick.h": "c",
+        "bateria.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.errorSquiggles": "disabled"
+}

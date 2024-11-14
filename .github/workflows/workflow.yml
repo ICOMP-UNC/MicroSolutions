@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - master
       - develop
       - 1.0.0
   pull_request:
     branches:
+      - master
       - develop
-      - 1.0.0
     # Pull request events
     types: [synchronize, opened, reopened, ready_for_review]
 

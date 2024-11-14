@@ -18,19 +18,10 @@
 #define TRUE 1
 #define FALSE 0
 
-void configNVIC(void)
-{
-    NVIC_SetPriority(EINT0_IRQn, 0);  /* Set the priority of the EINT0 interrupt */
-    NVIC_SetPriority(TIMER0_IRQn, 1); /* Set the priority of the TIMER0 interrupt */
-    NVIC_SetPriority(TIMER1_IRQn, 2); /* Set the priority of the TIMER1 interrupt */
-    NVIC_SetPriority(EINT3_IRQn, 3);  /* Set the priority of the GPIO interrupt */
-}
-
 int main(void)
 {
     SystemInit();                   /* Initialize the system clock (default: 100 MHz) */
 
-    configPins();
     configSystick();                /* Configure SysTick timer */
     configExternalInterrupt();      /* Configure external interrupt */
     configTimer0AndMatch();         /* Configure Timer0 */
@@ -38,7 +29,7 @@ int main(void)
     configDAC();                    /* Configure DAC */
     configGPDMA();                  /* Configure DMA */
     configPWM();                    /* Configure PWM */
-    configNVIC();
+    configNVIC();                   /* Configure NVIC - Seteo de prioridades */
 
     while(TRUE)
     {

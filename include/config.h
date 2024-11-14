@@ -32,11 +32,6 @@
 #define OUTPUT 1
 
 /**
- * @brief Initialize ports and pins
- */
-void configPins(void);
-
-/**
  * @brief Initialize systick configuration
  */
 void configSystick(void);

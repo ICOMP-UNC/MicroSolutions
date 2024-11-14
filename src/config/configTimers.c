@@ -1,7 +1,7 @@
-// EINT3_IRQHandler.c
+// configTimers.c
 /*
- * @file EINT3_IRQHandler.c
- * @brief Contiene el handler para la IRQ de EINT3
+ * @file configTimers.c
+ * @brief Contiene la configuracion de los timers con sus respectivos matches y captures
  */
 
 #ifdef __USE_CMSIS
@@ -14,8 +14,6 @@
 
 #include "config.h"
 
-/**
- * @brief Overwrite the interrupt handle routine for GPIO (EINT3)
- */
-void EINT3_IRQHandler(void)
-{}
+void configTimer0AndMatch(void)
+{
+}

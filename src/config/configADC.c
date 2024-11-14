@@ -1,7 +1,7 @@
-// configPins.c
+// configADC.c
 /*
- * @file configPins.c
- * @brief Contiene la configuracion de todos los puertos y pines utilizados en el proyecto
+ * @file configADC.c
+ * @brief Contiene la configuracion del ADC y sus respectivos canales
  */
 
 #ifdef __USE_CMSIS
@@ -14,8 +14,6 @@
 
 #include "config.h"
 
-/**
- * @brief Initialize ports and pins
- */
-void configPins(void)
-{}
+void configADC(void)
+{
+}

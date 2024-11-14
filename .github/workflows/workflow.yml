@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - develop
       - 1.0.0
   pull_request:
     branches:
-      - develop
       - 1.0.0
     # Pull request events
     types: [synchronize, opened, reopened, ready_for_review]

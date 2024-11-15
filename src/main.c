@@ -29,7 +29,7 @@ int main(void)
     configDAC();                    /* Configure DAC */
     configGPDMA();                  /* Configure DMA */
     configPWM();                    /* Configure PWM */
-    configNVIC();                   /* Configure NVIC - Seteo de prioridades */
+    configNVIC();                   /* Configure NVIC - Seteo de prioridades y hablitaciones */
 
     while(TRUE)
     {

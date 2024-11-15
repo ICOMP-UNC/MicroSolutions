@@ -14,15 +14,25 @@
 
 #include "config.h"
 #include "ldr.h"
+#include "joystick.h"
 
 /**
  * @brief SysTick Interrupt Handler.
  */
 void SysTick_Handler(void)
 {
-    promediarValoresLDR();
-    compararValoresLDR();
-    actualizarPWM();
+    if(modo == AUTOMATICO)
+    {
+        promediarValoresLDR();
+        compararValoresLDR();
+        actualizarPWMA();
+    }
+    else
+    {
+        promediarValoresEjesJoystick();
+        compararValoresEjesJoystick();
+        actualizarPWMM();
+    }
 
     SYSTICK_ClearCounterFlag();
 }

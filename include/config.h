@@ -31,6 +31,9 @@
 #define INPUT  0
 #define OUTPUT 1
 
+uint8_t angulo_SV;
+uint8_t angulo_SH;
+
 /**
  * @brief Initialize systick configuration
  */

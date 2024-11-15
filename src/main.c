@@ -23,6 +23,7 @@ int main(void)
     SystemInit();                   /* Initialize the system clock (default: 100 MHz) */
 
     configPinLDR();                 /* Configure LDR pins */
+    configPinJoystick();            /* Configure joystick pins */
 
     configSystick();                /* Configure SysTick timer */
     configExternalInterrupt();      /* Configure external interrupt */

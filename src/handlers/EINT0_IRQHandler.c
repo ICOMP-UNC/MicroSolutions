@@ -13,9 +13,15 @@
 #endif
 
 #include "config.h"
+#include "joystick.h"
 
 /**
  * @brief Overwrite the interrupt handle routine for EINT0
  */
 void EINT0_IRQHandler(void)
-{}
+{
+    switchModoOrientacion();
+    configuracionCanalesADC();
+
+    EXTI_ClearEXTIFlag(EXTI_EINT0); /* Clear the interrupt flag */
+}

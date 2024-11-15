@@ -44,11 +44,6 @@ uint16_t promedio_S2;
 uint16_t promedio_S3;
 uint16_t promedio_S4;
 
-uint8_t angulo_SV = 90;
-uint8_t angulo_SH = 90;
-
-#endif
-
 /**
  * @brief Initialize the GPIO pins.
  */
@@ -68,4 +63,6 @@ void compararValoresLDR(void);
  * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
  * de acuerdo a las comparaciones hechas de los valores sensados de los LDR
  */
-void actualizarPWM(void);
+void actualizarPWMA(void);
+
+#endif

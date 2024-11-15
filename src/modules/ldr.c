@@ -8,6 +8,9 @@
 
 #include "ldr.h"
 
+angulo_SV = 90;
+angulo_SH = 90;
+
 /**
  * @brief Initialize the GPIO pins.
  */
@@ -123,7 +126,7 @@ void compararValoresLDR(void)
  * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
  * de acuerdo a las comparaciones hechas de los valores sensados de los LDR
  */
-void actualizarPWM(void)
+void actualizarPWMA(void)
 {
     // Conversión a rango de 1000-2000 para determinar el ciclo de trabajo de los PWM para los servos
     uint32_t matchValueSV = 1000 + (angulo_SV * 1000) / 180;

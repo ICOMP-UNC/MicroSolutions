@@ -22,6 +22,8 @@ int main(void)
 {
     SystemInit();                   /* Initialize the system clock (default: 100 MHz) */
 
+    configPinLDR();                 /* Configure LDR pins */
+
     configSystick();                /* Configure SysTick timer */
     configExternalInterrupt();      /* Configure external interrupt */
     configTimer0AndMatch();         /* Configure Timer0 */

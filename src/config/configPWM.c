@@ -20,8 +20,8 @@
 #define PWM_DUTY_CYCLE 1500     // Pulso central en µs (1.5 ms)
 
 // Canales utilizados
-#define PWM_CHANNEL_2 (uint8_t)(2)
-#define PWM_CHANNEL_3 (uint8_t)(3)
+#define PWM_CHANNEL_2 ((uint8_t)(2)) // Canal Servo Vertical
+#define PWM_CHANNEL_3 ((uint8_t)(3)) // Canal Servo Horizontal
 
 void configPWM(void)
 {

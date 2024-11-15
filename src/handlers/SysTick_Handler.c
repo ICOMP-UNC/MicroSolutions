@@ -13,9 +13,16 @@
 #endif
 
 #include "config.h"
+#include "ldr.h"
 
 /**
  * @brief SysTick Interrupt Handler.
  */
 void SysTick_Handler(void)
-{}
+{
+    promediarValoresLDR();
+    compararValoresLDR();
+    actualizarPWM();
+
+    SYSTICK_ClearCounterFlag();
+}

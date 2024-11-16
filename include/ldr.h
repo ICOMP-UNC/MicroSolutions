@@ -29,10 +29,6 @@
 #define MUESTRAS 10
 #define UMBRAL_SENSIBILIDAD 50
 
-// Canales PWM utilizados
-#define PWM_CHANNEL_SV ((uint8_t)(2)) // Canal Servo Vertical
-#define PWM_CHANNEL_SH ((uint8_t)(3)) // Canal Servo Horizontal
-
 /* Global variables Definitions */
 uint16_t ldr_S1[MUESTRAS] = {};
 uint16_t ldr_S2[MUESTRAS] = {};
@@ -58,11 +54,5 @@ void promediarValoresLDR(void);
  * @brief Compara los valores promedios de los valores sensados para cada LDR
  */
 void compararValoresLDR(void);
-
-/**
- * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
- * de acuerdo a las comparaciones hechas de los valores sensados de los LDR
- */
-void actualizarPWMA(void);
 
 #endif

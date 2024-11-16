@@ -25,14 +25,13 @@ void SysTick_Handler(void)
     {
         promediarValoresLDR();
         compararValoresLDR();
-        actualizarPWMA();
     }
     else
     {
         promediarValoresEjesJoystick();
         compararValoresEjesJoystick();
-        actualizarPWMM();
     }
 
+    actualizarPWM();
     SYSTICK_ClearCounterFlag();
 }

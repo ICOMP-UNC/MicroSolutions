@@ -65,10 +65,4 @@ promediarValoresEjesJoystick();
  */
 compararValoresEjesJoystick();
 
-/**
- * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
- * de acuerdo a las comparaciones hechas de los valores sensados de los Ejes
- */
-actualizarPWMM();
-
 #endif

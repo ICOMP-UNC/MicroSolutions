@@ -121,17 +121,3 @@ void compararValoresLDR(void)
     (angulo_SH < 0)? angulo_SH = 0;
     (angulo_SH > 180)? angulo_SH = 180;
 }
-
-/**
- * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
- * de acuerdo a las comparaciones hechas de los valores sensados de los LDR
- */
-void actualizarPWMA(void)
-{
-    // Conversión a rango de 1000-2000 para determinar el ciclo de trabajo de los PWM para los servos
-    uint32_t matchValueSV = 1000 + (angulo_SV * 1000) / 180;
-    uint32_t matchValueSH = 1000 + (angulo_SH * 1000) / 180;
-
-    PWM_MatchUpdate(LPC_PWM1, PWM_CHANNEL_SV, matchValueSV, PWM_MATCH_UPDATE_NEXT_RST);
-    PWM_MatchUpdate(LPC_PWM1, PWM_CHANNEL_SH, matchValueSH, PWM_MATCH_UPDATE_NEXT_RST);
-}

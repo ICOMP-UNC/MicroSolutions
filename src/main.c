@@ -24,6 +24,7 @@ int main(void)
 
     configPinLDR();                 /* Configure LDR pins */
     configPinJoystick();            /* Configure joystick pins */
+    configPinServos();              /* Configure servos pins */
 
     configSystick();                /* Configure SysTick timer */
     configExternalInterrupt();      /* Configure external interrupt */

@@ -44,8 +44,8 @@
  * @def angulo_SH
  * @brief Guardan los valores de los angulos de posición de los servos horizontal y vertical.
  */
-extern uint8_t angulo_SV;
-extern uint8_t angulo_SH;
+uint8_t angulo_SV = 90;
+uint8_t angulo_SH = 90;
 
 /**
  * @brief Initialize systick configuration

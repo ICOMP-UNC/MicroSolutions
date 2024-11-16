@@ -8,9 +8,6 @@
 
 #include "ldr.h"
 
-angulo_SV = 90;
-angulo_SH = 90;
-
 /**
  * @brief Initialize the GPIO pins.
  */

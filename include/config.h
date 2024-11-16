@@ -17,6 +17,8 @@
 #include <cr_section_macros.h> /* The cr_section_macros is specific to the MCUXpresso delivered toolchain */
 #endif
 
+#include <stddef.h>
+
 #include "lpc17xx_adc.h"
 #include "lpc17xx_dac.h"
 #include "lpc17xx_exti.h"

@@ -21,9 +21,9 @@
 #include "config.h"
 
 /* Pin Definitions */
-#define EJE_X ((uint32_t)(1 << 24)) // P0[24]
-#define EJE_Y ((uint32_t)(1 << 25)) // P0[25]
-#define PULSADOR ((uint32_t)(1 << 10))  // P2[10]
+#define PIN_EJE_X ((uint32_t)(1 << 24)) // P0[24]
+#define PIN_EJE_Y ((uint32_t)(1 << 25)) // P0[25]
+#define PIN_PULSADOR ((uint32_t)(1 << 10))  // P2[10]
 
 /* Macros Definitions */
 #define MANUAL 1
@@ -58,11 +58,11 @@ void configuracionCanalesADC(void);
 /**
  * @brief Promedia los valores almacenados sensados para cada Eje
  */
-promediarValoresEjesJoystick();
+void promediarValoresEjesJoystick(void);
 
 /**
  * @brief Compara los valores promedios de los valores sensados para cada Eje
  */
-compararValoresEjesJoystick();
+void compararValoresEjesJoystick(void);
 
 #endif

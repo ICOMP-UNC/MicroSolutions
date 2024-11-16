@@ -15,6 +15,8 @@
 #include "config.h"
 #include "ldr.h"
 #include "joystick.h"
+#include "servos.h"
+#include "bateria.h"
 
 /**
  * @brief SysTick Interrupt Handler.
@@ -33,5 +35,10 @@ void SysTick_Handler(void)
     }
 
     actualizarPWM();
+
+    promediarValoresBateria();
+    compararValoresBateria();
+    actualizarDAC();
+
     SYSTICK_ClearCounterFlag();
 }

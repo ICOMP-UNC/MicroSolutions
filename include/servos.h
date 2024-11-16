@@ -19,8 +19,8 @@
 #include "config.h"
 
 /* Pin Definitions */
-#define SERVO_X ((uint32_t)(1 << 1)) // P2[1]
-#define SERVO_Y ((uint32_t)(1 << 2)) // P2[2]
+#define PIN_SERVO_X ((uint32_t)(1 << 1)) // P2[1]
+#define PIN_SERVO_Y ((uint32_t)(1 << 2)) // P2[2]
 
 /* Macros Definitions */
 #define PWM_CHANNEL_SV ((uint8_t)(2)) // Canal PWM Servo Vertical
@@ -35,6 +35,6 @@ void configPinServos(void);
  * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
  * de acuerdo a las comparaciones hechas de los valores sensados
  */
-actualizarPWM();
+void actualizarPWM(void);
 
 #endif

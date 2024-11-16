@@ -99,7 +99,7 @@ void configuracionCanalesADC(void)
 /**
  * @brief Promedia los valores almacenados sensados para cada Eje
  */
-promediarValoresEjesJoystick()
+void promediarValoresEjesJoystick(void)
 {
     uint16_t suma = 0;
     for (size_t i = 0; i < MUESTRAS; i++)
@@ -119,7 +119,7 @@ promediarValoresEjesJoystick()
 /**
  * @brief Compara los valores promedios de los valores sensados para cada Eje
  */
-compararValoresEjesJoystick()
+void compararValoresEjesJoystick(void)
 {
     if(promedio_eje_x > 3072)
     {

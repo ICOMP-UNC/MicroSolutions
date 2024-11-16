@@ -15,6 +15,7 @@
 #include "config.h"
 #include "ldr.h"
 #include "joystick.h"
+#include "bateria.h"
 
 #define DONE 1
 
@@ -25,7 +26,7 @@
 void ADC_IRQHandler(void)
 {
     static uint8_t pos = 0;
-    uint16_t adc_value;
+
     if(modo == AUTOMATICO)
     {
         if(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_4, DONE))
@@ -58,7 +59,7 @@ void ADC_IRQHandler(void)
     }
     if(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_0, DONE))
     {
-        adc_value = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0);
+        tension_bateria[pos] = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0);
     }
 
     (pos == 9)? pos=0 : pos++;

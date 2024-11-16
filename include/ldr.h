@@ -20,10 +20,10 @@
 #include "config.h"
 
 /* Pin Definitions */
-#define LDR_S1 ((uint32_t)(1 << 30)) // P1[30]
-#define LDR_S2 ((uint32_t)(1 << 31)) // P1[31]
-#define LDR_S3 ((uint32_t)(1 << 3))  // PO[3]
-#define LDR_S4 ((uint32_t)(1 << 2))  // PO[2]
+#define PIN_LDR_S1 ((uint32_t)(1 << 30)) // P1[30]
+#define PIN_LDR_S2 ((uint32_t)(1 << 31)) // P1[31]
+#define PIN_LDR_S3 ((uint32_t)(1 << 3))  // PO[3]
+#define PIN_LDR_S4 ((uint32_t)(1 << 2))  // PO[2]
 
 /* Macros Definitions */
 #define MUESTRAS 10

@@ -30,9 +30,9 @@ void configPinServos(void)
  * @brief Actualiza la configuracion de los canales PWM para los servos horizontal y vertical
  * de acuerdo a las comparaciones hechas de los valores sensados
  */
-actualizarPWM()
+void actualizarPWM(void)
 {
-    // Conversión a rango de 1000-2000 para determinar el ciclo de trabajo de los PWM para los servos
+    // Conversión al rango de 1000-2000 para determinar el ciclo de trabajo de los PWM para los servos
     uint32_t matchValueSV = 1000 + (angulo_SV * 1000) / 180;
     uint32_t matchValueSH = 1000 + (angulo_SH * 1000) / 180;
 

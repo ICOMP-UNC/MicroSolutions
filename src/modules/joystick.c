@@ -47,7 +47,6 @@ void switchModoOrientacion(void)
     else
     {
         modo = AUTOMATICO;
-        // Habilito canales ADC Eje X e Y joystick
     }
 }
 
@@ -59,13 +58,13 @@ void configuracionCanalesADC(void)
 {
     if (modo == MANUAL)
     {
-        // Habilito canales ADC Eje X e Y joystick
+        /* Habilito canales ADC Eje X e Y joystick */
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_1, ENABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_1, ENABLE);
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_2, ENABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_2, ENABLE);
 
-        // Deshabilito canales ADC de los LDR
+        /* Deshabilito canales ADC de los LDR */
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_4, DISABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_4, DISABLE);
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_5, DISABLE);
@@ -77,13 +76,13 @@ void configuracionCanalesADC(void)
     }
     else
     {
-        // Deshabilito canales ADC Eje X e Y joystick
+        /* Deshabilito canales ADC Eje X e Y joystick */
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_1, DISABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_1, DISABLE);
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_2, DISABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_2, DISABLE);
 
-        // Habilito canales ADC de los LDR
+        /* Habilito canales ADC de los LDR */
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_4, ENABLE);
         ADC_IntConfig(LPC_ADC, ADC_CHANNEL_4, ENABLE);
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_5, ENABLE);
@@ -136,6 +135,7 @@ void compararValoresEjesJoystick(void)
     {
         angulo_SV = angulo_SV - 10;
     }
+    /* Verifico que los ángulos estén dentro del rango [0°, 180°] */
     (angulo_SV < 0)   ? angulo_SV = 0;
     (angulo_SV > 180) ? angulo_SV = 180;
     (angulo_SH < 0)   ? angulo_SH = 0;

@@ -14,7 +14,12 @@
 
 #include "config.h"
 
-/* Define macros */
+/* Macros Definitions */
+/**
+ * @def TRUE
+ * @def FALSE
+ * @brief Logic Values Definitions.
+ */
 #define TRUE  1
 #define FALSE 0
 

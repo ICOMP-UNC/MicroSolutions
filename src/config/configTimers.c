@@ -14,27 +14,46 @@
 
 #include "config.h"
 
-/* Define macros */
-#define PRESCALE_VALUE 100  /* Expressed in microseconds */
-#define MILISECOND     1000 /* Expressed in microseconds */
-#define CANT_MS        100  /* Number of miliseconds */
+/* Macros Definitions */
+/**
+ * @def PRESCALE_VALUE
+ * @brief Valor del pre-escaler del Timer0.
+ * Valor expresado en microsegundos
+ */
+#define PRESCALE_VALUE 100
+/**
+ * @def MILISECOND
+ * @brief Valor de un milisegundo en microsegudnos.
+ * Valor expresado en microsegundos
+ */
+#define MILISECOND 1000
+/**
+ * @def CANT_MS
+ * @brief Cantidad de milisegudnos.
+ * Valor expresado en milisegundos
+ */
+#define CANT_MS 100
+
+/**
+ * @brief Configure Timer0 to trigger an interrupt every 60 seconds.
+ */
 void configTimer0AndMatch(void)
 {
     TIM_TIMERCFG_Type timerCfg;
     TIM_MATCHCFG_Type matchCfg;
 
-    // Configure Timer0 in microsecond mode with a prescaler
-    timerCfg.PrescaleOption = TIM_PRESCALE_USVAL; // Prescaler in microseconds
-    timerCfg.PrescaleValue = PRESCALE_VALUE;      // Prescaler for 100 MHz clock -> 100 µs resolution.
+    /* Configure Timer0 in microsecond mode with a prescaler */
+    timerCfg.PrescaleOption = TIM_PRESCALE_USVAL; /* Prescaler in microseconds */
+    timerCfg.PrescaleValue = PRESCALE_VALUE;      /* Prescaler for 100 MHz clock -> 100 µs resolution */
     TIM_Init(LPC_TIM0, TIM_TIMER_MODE, &timerCfg);
 
-    // Configure Match0.1 channel for ADC
+    /* Configure Match0.1 channel for ADC */
     match_cfg_struct.MatchChannel = 1;
     match_cfg_struct.IntOnMatch = DISABLE;
     match_cfg_struct.StopOnMatch = DISABLE;
     match_cfg_struct.ResetOnMatch = ENABLE;
     match_cfg_struct.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
-    match_cfg_struct.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); // Match cada 100 milisegundos
+    match_cfg_struct.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); /* Match cada 100 milisegundos */
     TIM_ConfigMatch(LPC_TIM0, &matchCfg);
 
     TIM_Cmd(LPC_TIM0, ENABLE); /* Start Timer0 */

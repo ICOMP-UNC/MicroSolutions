@@ -18,13 +18,25 @@
 
 #include "config.h"
 
-/* Pin Definitions */
-#define PIN_SERVO_X ((uint32_t)(1 << 1)) // P2[1]
-#define PIN_SERVO_Y ((uint32_t)(1 << 2)) // P2[2]
+/* Pins Definitions */
+/**
+ * @def PIN_SERVO_X
+ * @def PIN_SERVO_X
+ * @brief Definición de pines modulos servos SG90.
+ */
+#define PIN_SERVO_X ((uint32_t)(1 << 1)) /* P2[1] */
+#define PIN_SERVO_X ((uint32_t)(1 << 2)) /* P2[2] */
 
 /* Macros Definitions */
-#define PWM_CHANNEL_SV ((uint8_t)(2)) // Canal PWM Servo Vertical
-#define PWM_CHANNEL_SH ((uint8_t)(3)) // Canal PWM Servo Horizontal
+/**
+ * @def PWM_CHANNEL_SV
+ * @def PWM_CHANNEL_SH
+ * @brief Canales de PWM utilizados para los servos.
+ * PWM_CHANNEL_SV: Canal 2 PWM1
+ * PWM_CHANNEL_SH: Canal 3 PWM1
+ */
+#define PWM_CHANNEL_SV ((uint8_t)(2)) /* Canal PWM Servo Vertical */
+#define PWM_CHANNEL_SH ((uint8_t)(3)) /* Canal PWM Servo Horizontal */
 
 /**
  * @brief Initialize the GPIO pins.

@@ -14,9 +14,17 @@
 
 #include "config.h"
 
-/* Define macros */
-#define SYSTICK_TIME 1000 /* Expressed in milliseconds */
+/* Macros Definitions */
+/**
+ * @def SYSTICK_TIME
+ * @brief Intervalo de interrupción del Systick.
+ * Valor expresado en milisegundos
+ */
+#define SYSTICK_TIME 1000
 
+/**
+ * @brief Initialize systick configuration
+ */
 void configSystick(void)
 {
     SYSTICK_InternalInit(SYSTICK_TIME); /* Initialize the SysTick timer with a time interval of 1000 ms */

@@ -27,10 +27,21 @@
 #include "lpc17xx_systick.h"
 #include "lpc17xx_timer.h"
 
-/* GPIO Direction Definitions */
+/* Macros Definitions */
+/**
+ * @def INPUT
+ * @def OUTPUT
+ * @brief GPIO Direction Definitions.
+ */
 #define INPUT  0
 #define OUTPUT 1
 
+/* Global variables Definitions */
+/**
+ * @def angulo_SV
+ * @def angulo_SH
+ * @brief Guardan los valores de los angulos de posición de los servos horizontal y vertical.
+ */
 uint8_t angulo_SV;
 uint8_t angulo_SH;
 

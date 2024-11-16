@@ -14,12 +14,17 @@
 
 #include "config.h"
 
+/**
+ * @brief Initialize NVIC configuration
+ * Setea las prioridades para las interrupciones utilizadas
+ */
 void configNVIC(void)
 {
-    NVIC_SetPriority(EINT0_IRQn, 0); /* Set the priority of the EINT0 interrupt */
-    NVIC_SetPriority(PWM1_IRQn, 1);  /* Set the priority of the PWM interrupt */
-    NVIC_SetPriority(ADC_IRQn, 2);   /* Set the priority of the ADC interrupt */
-
+    /* Set the priority of the interrupts */
+    NVIC_SetPriority(EINT0_IRQn, 0);
+    NVIC_SetPriority(PWM1_IRQn, 1);
+    NVIC_SetPriority(ADC_IRQn, 2);
+    /* Enablement of the interrupts */
     NVIC_EnableIRQ(EINT0_IRQn);
     NVIC_EnableIRQ(PWM1_IRQn);
     NVIC_EnableIRQ(ADC_IRQn);

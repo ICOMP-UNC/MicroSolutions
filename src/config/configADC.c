@@ -14,9 +14,17 @@
 
 #include "config.h"
 
-/* Define macros */
+/* Macros Definitions */
+/**
+ * @def ADC_FREQ
+ * @brief Define la frecuencia de trabajo del ADC.
+ * Valor expresado en Hz.
+ */
 #define ADC_FREQ 100000 /* ADC frequency in 100 kHz */
 
+/**
+ * @brief Initialize ADC configuration
+ */
 void configADC(void)
 {
     ADC_Init(LPC_ADC, ADC_FREQ); /* Initialize the ADC peripheral with a 100 kHz sampling frequency */

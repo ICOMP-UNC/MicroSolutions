@@ -17,10 +17,17 @@
 #include "joystick.h"
 #include "ldr.h"
 
+/* Macros Definitions */
+/**
+ * @def DONE
+ * @brief Representa el estado de finalización de conversión de un canal del ADC.
+ */
 #define DONE 1
 
 /**
  * @brief ADC Interrupt Handler.
+ * Canales Batería: ADC_CHANNEL_0
+ * Canales EjesXeY: ADC_CHANNEL_1 y ADC_CHANNEL_2
  * Canales LDR: ADC_CHANNEL_4, ADC_CHANNEL_5, ADC_CHANNEL_6 y ADC_CHANNEL_7
  */
 void ADC_IRQHandler(void)

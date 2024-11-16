@@ -77,61 +77,62 @@ void compararValoresLDR(void)
 {
     if (abs(S1 - S2) > UMBRAL_SENSIBILIDAD)
     {
-        // Rotar servo vertical
+        /* Rotar servo vertical */
         if (S1 > S2)
         {
-            // Rotar 10° hacia 0°
+            /* Rotar 10° hacia 0° */
             angulo_SV = angulo_SV - 10;
         }
         else
         {
-            // Rotar 10° hacia 180°
+            /* Rotar 10° hacia 180° */
             angulo_SV = angulo_SV + 10;
         }
     }
     else if (abs(S3 - S4) > UMBRAL_SENSIBILIDAD)
     {
-        // Rotar servo vertical
+        /* Rotar servo vertical */
         if (S3 > S4)
         {
-            // Rotar 10° hacia 0°
+            /* Rotar 10° hacia 0° */
             angulo_SV = angulo_SV - 10;
         }
         else
         {
-            // Rotar 10° hacia 180°
+            /* Rotar 10° hacia 180° */
             angulo_SV = angulo_SV + 10;
         }
     }
 
     if (abs(S1 - S3) > UMBRAL_SENSIBILIDAD)
     {
-        // Rotar servo horizontal
+        /* Rotar servo horizontal */
         if (S1 > S3)
         {
-            // Rotar 10° hacia 0°
+            /* Rotar 10° hacia 0° */
             angulo_SH = angulo_SH - 10;
         }
         else
         {
-            // Rotar 10° hacia 180°
+            /* Rotar 10° hacia 180° */
             angulo_SH = angulo_SH + 10;
         }
     }
     else if (abs(S2 - S4) > UMBRAL_SENSIBILIDAD)
     {
-        // Rotar servo horizontal
+        /* Rotar servo horizontal */
         if (S2 > S4)
         {
-            // Rotar 10° hacia 0°
+            /* Rotar 10° hacia 0° */
             angulo_SH = angulo_SH + 10;
         }
         else
         {
-            // Rotar 10° hacia 180°
+            /* Rotar 10° hacia 180° */
             angulo_SH = angulo_SH + 10;
         }
     }
+    /* Verifico que los ángulos estén dentro del rango [0°, 180°] */
     (angulo_SV < 0)   ? angulo_SV = 0;
     (angulo_SV > 180) ? angulo_SV = 180;
     (angulo_SH < 0)   ? angulo_SH = 0;

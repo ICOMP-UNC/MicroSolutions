@@ -20,22 +20,49 @@
 
 #include "config.h"
 
-/* Pin Definitions */
-#define PIN_EJE_X    ((uint32_t)(1 << 24)) // P0[24]
-#define PIN_EJE_Y    ((uint32_t)(1 << 25)) // P0[25]
-#define PIN_PULSADOR ((uint32_t)(1 << 10)) // P2[10]
+/* Pins Definitions */
+/**
+ * @def PIN_EJE_X
+ * @def PIN_EJE_Y
+ * @def PIN_PULSADOR
+ * @brief Definición de pines modulo joystick.
+ */
+#define PIN_EJE_X    ((uint32_t)(1 << 24)) /* P0[24] */
+#define PIN_EJE_Y    ((uint32_t)(1 << 25)) /* P0[25] */
+#define PIN_PULSADOR ((uint32_t)(1 << 10)) /* P2[10] */
 
 /* Macros Definitions */
+/**
+ * @def MANUAL
+ * @def AUTOMATICO
+ * @brief Modos de orientación del panel solar.
+ * MANUAL: mediante módulo joystick.
+ * AUTOMATICO: mediante sensores LDR.
+ */
 #define MANUAL     1
 #define AUTOMATICO 0
-#define MUESTRAS   10
+/**
+ * @def MUESTRAS
+ * @brief Cantidad de muestras de tensión de la batería.
+ */
+#define MUESTRAS 10
 
 /* Global variables Definitions */
+/**
+ * @brief Determina el modo de orientación del panel solar.
+ * Puede tomar el valor MANUL o AUTOMATICO
+ */
 uint8_t modo = AUTOMATICO;
-
+/**
+ * @brief Arrays que guardan las muestras de tensión de los ejes x e y
+ * del modulo joystick tomadas por el ADC.
+ */
 uint16_t eje_x[MUESTRAS] = {};
 uint16_t eje_y[MUESTRAS] = {};
-
+/**
+ * @brief Valores promedios de las muestras de tensión de los ejes x e y
+ * del modulo joystick tomadas por el ADC.
+ */
 uint16_t promedio_eje_x;
 uint16_t promedio_eje_y;
 

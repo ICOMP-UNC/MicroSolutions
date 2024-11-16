@@ -14,6 +14,9 @@
 
 #include "config.h"
 
+/**
+ * @brief Initialize the external interrupt
+ */
 void configExternalInterrupt(void)
 {
     EXTI_Init();

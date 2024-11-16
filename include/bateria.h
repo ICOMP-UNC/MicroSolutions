@@ -18,22 +18,61 @@
 
 #include "config.h"
 
-/* Pin Definitions */
-#define PIN_TENSION_BATERIA ((uint32_t)(1 << 23)) // P0[23]
-#define PIN_LED_BATERIA     ((uint32_t)(1 << 26)) // P0[26]
+/* Pins Definitions */
+/**
+ * @def PIN_TENSION_BATERIA
+ * @def PIN_LED_BATERIA
+ * @brief Definición de pines modulo batería.
+ */
+#define PIN_TENSION_BATERIA ((uint32_t)(1 << 23)) /* P0[23] */
+#define PIN_LED_BATERIA     ((uint32_t)(1 << 26)) /* P0[26] */
 
 /* Macros Definitions */
-#define MUESTRAS              10
-#define TENSION_BATERIA_MIN   2.5
-#define TENSION_BATERIA_MAX   3.3
+/**
+ * @def MUESTRAS
+ * @brief Cantidad de muestras de tensión de la batería.
+ */
+#define MUESTRAS 10
+/**
+ * @def TENSION_BATERIA_MIN
+ * @def TENSION_BATERIA_MAX
+ * @brief Valores de tensión mínimo y máximo de la batería.
+ */
+#define TENSION_BATERIA_MIN 2.5
+#define TENSION_BATERIA_MAX 3.3
+/**
+ * @def RANGO_TENSION_BATERIA
+ * @brief Rango de tensión de trabajo de la batería.
+ */
 #define RANGO_TENSION_BATERIA (TENSION_BATERIA_MAX - TENSION_BATERIA_MIN)
-#define TENSION_DAC_MIN       2.7
-#define TENSION_DAC_MAX       3.3
-#define RANGO_TENSION_DAC     (TENSION_DAC_MAX - TENSION_DAC_MIN)
+/**
+ * @def TENSION_DAC_MIN
+ * @def TENSION_DAC_MIN
+ * @brief Valores de tensión mínimo y máximo de salida del DAC.
+ */
+#define TENSION_DAC_MIN 2.7
+#define TENSION_DAC_MIN 3.3
+/**
+ * @def RANGO_TENSION_DAC
+ * @brief Rango de tensión de trabajo para el DAC.
+ */
+#define RANGO_TENSION_DAC (TENSION_DAC_MAX - TENSION_DAC_MIN)
 
 /* Global variables Definitions */
+/**
+ * @brief Array con las muestras de tensión de la batería tomadas por el ADC.
+ * Los valores deben estar en el RANGO_TENSION_BATERIA.
+ */
 uint16_t tension_bateria[MUESTRAS] = {};
+/**
+ * @brief Promedio de tensión de la batería de las muestras tomadas por el ADC.
+ * El valor debe estar en el RANGO_TENSION_BATERIA.
+ */
 uint16_t promedio_tension;
+/**
+ * @brief Nivel de tensión de salida del DAC para regular intensidad de iluminación del led.
+ * El valor debe estar en el RANGO_TENSION_DAC.
+ */
 uint32_t dac_output;
 
 /**

@@ -26,7 +26,7 @@
 #define PIN_LDR_S4 ((uint32_t)(1 << 2))  // PO[2]
 
 /* Macros Definitions */
-#define MUESTRAS 10
+#define MUESTRAS            10
 #define UMBRAL_SENSIBILIDAD 50
 
 /* Global variables Definitions */

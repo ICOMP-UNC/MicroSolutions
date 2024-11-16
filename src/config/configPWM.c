@@ -15,9 +15,9 @@
 #include "config.h"
 
 /* Define macros */
-#define PRESCALE_VALUE 1        /* Expressed in microseconds */
-#define PWM_PERIOD 20000        // Periodo en µs (20 ms)
-#define PWM_DUTY_CYCLE 1500     // Pulso central en µs (1.5 ms)
+#define PRESCALE_VALUE 1     /* Expressed in microseconds */
+#define PWM_PERIOD     20000 // Periodo en µs (20 ms)
+#define PWM_DUTY_CYCLE 1500  // Pulso central en µs (1.5 ms)
 
 // Canales utilizados
 #define PWM_CHANNEL_2 ((uint8_t)(2)) // Canal Servo Vertical

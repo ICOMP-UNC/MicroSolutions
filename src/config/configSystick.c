@@ -15,11 +15,11 @@
 #include "config.h"
 
 /* Define macros */
-#define SYSTICK_TIME 1000   /* Expressed in milliseconds */
+#define SYSTICK_TIME 1000 /* Expressed in milliseconds */
 
 void configSystick(void)
 {
     SYSTICK_InternalInit(SYSTICK_TIME); /* Initialize the SysTick timer with a time interval of 1000 ms */
-    SYSTICK_IntCmd(ENABLE); /* Enable SysTick interrupt */
-    SYSTICK_Cmd(ENABLE);    /* Enable SysTick counter */
+    SYSTICK_IntCmd(ENABLE);             /* Enable SysTick interrupt */
+    SYSTICK_Cmd(ENABLE);                /* Enable SysTick counter */
 }

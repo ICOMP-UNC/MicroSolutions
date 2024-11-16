@@ -19,8 +19,8 @@
 #define TRUE             1
 #define DMA_CHANNEL_ZERO 0
 
-GPDMA_Channel_CFG_Type GPDMACfg;    // DMA configuration structure
-GPDMA_LLI_Type DMA_LLI_Struct;      // DMA linked list item for continuous transfer
+GPDMA_Channel_CFG_Type GPDMACfg; // DMA configuration structure
+GPDMA_LLI_Type DMA_LLI_Struct;   // DMA linked list item for continuous transfer
 
 void configGPDMA(uint32_t* valor)
 {

@@ -24,11 +24,11 @@ void configPinJoystick(void)
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;
     pinCfg.OpenDrain = PINSEL_PINMODE_NORMAL;
 
-	for(size_t pin = PINSEL_PIN_24; pin <= PINSEL_PIN_25; pin ++)
-	{
-		pinCfg.Pinnum = pin;
-		PINSEL_ConfigPin(&pinCfg);
-	}
+    for (size_t pin = PINSEL_PIN_24; pin <= PINSEL_PIN_25; pin++)
+    {
+        pinCfg.Pinnum = pin;
+        PINSEL_ConfigPin(&pinCfg);
+    }
 
     pinCfg.Portnum = PINSEL_PORT_2;
     pinCfg.Pinnum = PINSEL_PIN_10;
@@ -40,10 +40,9 @@ void configPinJoystick(void)
  */
 void switchModoOrientacion(void)
 {
-    if(modo == AUTOMATICO)
+    if (modo == AUTOMATICO)
     {
         modo = MANUAL;
-
     }
     else
     {
@@ -58,7 +57,7 @@ void switchModoOrientacion(void)
  */
 void configuracionCanalesADC(void)
 {
-    if(modo == MANUAL)
+    if (modo == MANUAL)
     {
         // Habilito canales ADC Eje X e Y joystick
         ADC_ChannelCmd(LPC_ADC, ADC_CHANNEL_1, ENABLE);
@@ -121,24 +120,24 @@ void promediarValoresEjesJoystick(void)
  */
 void compararValoresEjesJoystick(void)
 {
-    if(promedio_eje_x > 3072)
+    if (promedio_eje_x > 3072)
     {
         angulo_SH = angulo_SH + 10;
     }
-    else if(promedio_eje_x < 1024)
+    else if (promedio_eje_x < 1024)
     {
         angulo_SH = angulo_SH - 10;
     }
-    if(promedio_eje_y > 3072)
+    if (promedio_eje_y > 3072)
     {
         angulo_SV = angulo_SV + 10;
     }
-    else if(promedio_eje_y < 1024)
+    else if (promedio_eje_y < 1024)
     {
         angulo_SV = angulo_SV - 10;
     }
-    (angulo_SV < 0)? angulo_SV = 0;
-    (angulo_SV > 180)? angulo_SV = 180;
-    (angulo_SH < 0)? angulo_SH = 0;
-    (angulo_SH > 180)? angulo_SH = 180;
+    (angulo_SV < 0)   ? angulo_SV = 0;
+    (angulo_SV > 180) ? angulo_SV = 180;
+    (angulo_SH < 0)   ? angulo_SH = 0;
+    (angulo_SH > 180) ? angulo_SH = 180;
 }

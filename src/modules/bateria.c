@@ -21,13 +21,13 @@ void configPinBateria(void)
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;
     pinCfg.OpenDrain = PINSEL_PINMODE_NORMAL;
 
-	PINSEL_ConfigPin(&pinCfg);
+    PINSEL_ConfigPin(&pinCfg);
 
     // Configuracion pin DAC
     pinCfg.Pinnum = PINSEL_PIN_26;
     pinCfg.Funcnum = PINSEL_FUNC_2; /* Function number is 2 (AOUT) */
 
-	PINSEL_ConfigPin(&pinCfg);
+    PINSEL_ConfigPin(&pinCfg);
 }
 
 /**
@@ -57,7 +57,8 @@ void compararValoresTensionBateria(void)
 {
     uint16_t tension_decimal = (promedio_tension * 3.3) / 4095;
 
-    uint16_t tension_led = TENSION_DAC_MIN + ((tension_decimal - TENSION_BATERIA_MIN) / RANGO_TENSION_BATERIA) * RANGO_TENSION_DAC;
+    uint16_t tension_led =
+        TENSION_DAC_MIN + ((tension_decimal - TENSION_BATERIA_MIN) / RANGO_TENSION_BATERIA) * RANGO_TENSION_DAC;
 
     dac_output = (uint32_t)((tension_led / 3.3) * 4095);
 }

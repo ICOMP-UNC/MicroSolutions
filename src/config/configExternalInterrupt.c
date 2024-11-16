@@ -16,10 +16,10 @@
 
 void configExternalInterrupt(void)
 {
-	EXTI_Init();
+    EXTI_Init();
     EXTI_InitTypeDef extiCfg;
-	extiCfg.EXTI_Line = EXTI_EINT0;
-	extiCfg.EXTI_Mode = EXTI_MODE_EDGE_SENSITIVE;
-	extiCfg.EXTI_polarity = EXTI_POLARITY_LOW_ACTIVE_OR_FALLING_EDGE;
-	EXTI_Config(&extiCfg);
+    extiCfg.EXTI_Line = EXTI_EINT0;
+    extiCfg.EXTI_Mode = EXTI_MODE_EDGE_SENSITIVE;
+    extiCfg.EXTI_polarity = EXTI_POLARITY_LOW_ACTIVE_OR_FALLING_EDGE;
+    EXTI_Config(&extiCfg);
 }

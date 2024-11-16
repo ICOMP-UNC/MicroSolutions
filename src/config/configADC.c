@@ -37,5 +37,5 @@ void configADC(void)
     ADC_IntConfig(LPC_ADC, ADC_CHANNEL_7, ENABLE);  /* Enable interrupt for ADC channel 7 */
 
     ADC_EdgeStartConfig(LPC_ADC, ADC_START_ON_RISING); /* Start conversion on a rising edge of the MAT signal*/
-    ADC_StartCmd(LPC_ADC, ADC_START_ON_MAT01); /* Start the ADC conversion en el Match0.1*/
+    ADC_StartCmd(LPC_ADC, ADC_START_ON_MAT01);         /* Start the ADC conversion en el Match0.1*/
 }

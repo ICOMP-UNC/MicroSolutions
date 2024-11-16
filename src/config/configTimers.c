@@ -15,9 +15,9 @@
 #include "config.h"
 
 /* Define macros */
-#define PRESCALE_VALUE 100      /* Expressed in microseconds */
-#define MILISECOND 1000         /* Expressed in microseconds */
-#define CANT_MS 100             /* Number of miliseconds */
+#define PRESCALE_VALUE 100  /* Expressed in microseconds */
+#define MILISECOND     1000 /* Expressed in microseconds */
+#define CANT_MS        100  /* Number of miliseconds */
 void configTimer0AndMatch(void)
 {
     TIM_TIMERCFG_Type timerCfg;
@@ -25,7 +25,7 @@ void configTimer0AndMatch(void)
 
     // Configure Timer0 in microsecond mode with a prescaler
     timerCfg.PrescaleOption = TIM_PRESCALE_USVAL; // Prescaler in microseconds
-    timerCfg.PrescaleValue = PRESCALE_VALUE; // Prescaler for 100 MHz clock -> 100 µs resolution.
+    timerCfg.PrescaleValue = PRESCALE_VALUE;      // Prescaler for 100 MHz clock -> 100 µs resolution.
     TIM_Init(LPC_TIM0, TIM_TIMER_MODE, &timerCfg);
 
     // Configure Match0.1 channel for ADC

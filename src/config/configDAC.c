@@ -15,17 +15,17 @@
 #include "config.h"
 
 /* Define macros */
-#define CLOCK_DAC_MHZ 25 // DAC clock: 25 MHz (CCLK divided by 4)
-#define WAVE_FREQUENCY 1 // Sine wave frequency: 1 Hz
-#define MHZ 1000000      // 1 MHz en Hz
+#define CLOCK_DAC_MHZ  25      // DAC clock: 25 MHz (CCLK divided by 4)
+#define WAVE_FREQUENCY 1       // Sine wave frequency: 1 Hz
+#define MHZ            1000000 // 1 MHz en Hz
 
 void configDAC(void)
 {
-    DAC_Init(LPC_DAC);      // Initialize the DAC
+    DAC_Init(LPC_DAC); // Initialize the DAC
     DAC_CONVERTER_CFG_Type DACCfg;
     uint32_t update_interval;
     // Configure DAC settings
-    DACCfg.CNT_ENA = SET;   // Enable DAC counter mode (timeout mode)
+    DACCfg.CNT_ENA = SET; // Enable DAC counter mode (timeout mode)
     DACCfg.DMA_ENA = SET; // Disable DAC DMA mode
     // Calculate sample update interval for the desired waveform frequency
     update_interval = (CLOCK_DAC_MHZ * MHZ) / (WAVE_FREQUENCY);

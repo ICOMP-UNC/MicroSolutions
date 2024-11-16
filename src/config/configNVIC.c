@@ -16,9 +16,9 @@
 
 void configNVIC(void)
 {
-    NVIC_SetPriority(EINT0_IRQn, 0);  /* Set the priority of the EINT0 interrupt */
-    NVIC_SetPriority(PWM1_IRQn, 1); /* Set the priority of the PWM interrupt */
-    NVIC_SetPriority(ADC_IRQn, 2); /* Set the priority of the ADC interrupt */
+    NVIC_SetPriority(EINT0_IRQn, 0); /* Set the priority of the EINT0 interrupt */
+    NVIC_SetPriority(PWM1_IRQn, 1);  /* Set the priority of the PWM interrupt */
+    NVIC_SetPriority(ADC_IRQn, 2);   /* Set the priority of the ADC interrupt */
 
     NVIC_EnableIRQ(EINT0_IRQn);
     NVIC_EnableIRQ(PWM1_IRQn);

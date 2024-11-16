@@ -19,11 +19,11 @@ void configPinServos(void)
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;
     pinCfg.OpenDrain = PINSEL_PINMODE_NORMAL;
 
-	for(size_t pin = PINSEL_PIN_1; pin <= PINSEL_PIN_2; pin ++)
-	{
-		pinCfg.Pinnum = pin;
-		PINSEL_ConfigPin(&pinCfg);
-	}
+    for (size_t pin = PINSEL_PIN_1; pin <= PINSEL_PIN_2; pin++)
+    {
+        pinCfg.Pinnum = pin;
+        PINSEL_ConfigPin(&pinCfg);
+    }
 }
 
 /**

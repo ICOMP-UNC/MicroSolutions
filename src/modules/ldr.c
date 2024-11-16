@@ -23,19 +23,19 @@ void configPinLDR(void)
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;
     pinCfg.OpenDrain = PINSEL_PINMODE_NORMAL;
 
-	for(size_t pin = PINSEL_PIN_30; pin <= PINSEL_PIN_31; pin ++)
-	{
-		pinCfg.Pinnum = pin;
-		PINSEL_ConfigPin(&pinCfg);
-	}
+    for (size_t pin = PINSEL_PIN_30; pin <= PINSEL_PIN_31; pin++)
+    {
+        pinCfg.Pinnum = pin;
+        PINSEL_ConfigPin(&pinCfg);
+    }
 
     pinCfg.Portnum = PINSEL_PORT_0;
 
-    for(size_t pin = PINSEL_PIN_2; pin <= PINSEL_PIN_3; pin ++)
-	{
-		pinCfg.Pinnum = pin;
-		PINSEL_ConfigPin(&pinCfg);
-	}
+    for (size_t pin = PINSEL_PIN_2; pin <= PINSEL_PIN_3; pin++)
+    {
+        pinCfg.Pinnum = pin;
+        PINSEL_ConfigPin(&pinCfg);
+    }
 }
 
 /**
@@ -75,49 +75,65 @@ void promediarValoresLDR(void)
  */
 void compararValoresLDR(void)
 {
-    if (abs(S1 - S2) > UMBRAL_SENSIBILIDAD) {
+    if (abs(S1 - S2) > UMBRAL_SENSIBILIDAD)
+    {
         // Rotar servo vertical
-        if (S1 > S2) {
+        if (S1 > S2)
+        {
             // Rotar 10° hacia 0°
             angulo_SV = angulo_SV - 10;
-        } else {
+        }
+        else
+        {
             // Rotar 10° hacia 180°
             angulo_SV = angulo_SV + 10;
         }
     }
-    else if (abs(S3 - S4) > UMBRAL_SENSIBILIDAD) {
+    else if (abs(S3 - S4) > UMBRAL_SENSIBILIDAD)
+    {
         // Rotar servo vertical
-        if (S3 > S4) {
+        if (S3 > S4)
+        {
             // Rotar 10° hacia 0°
             angulo_SV = angulo_SV - 10;
-        } else {
+        }
+        else
+        {
             // Rotar 10° hacia 180°
             angulo_SV = angulo_SV + 10;
         }
     }
 
-    if (abs(S1 - S3) > UMBRAL_SENSIBILIDAD) {
+    if (abs(S1 - S3) > UMBRAL_SENSIBILIDAD)
+    {
         // Rotar servo horizontal
-        if (S1 > S3) {
+        if (S1 > S3)
+        {
             // Rotar 10° hacia 0°
             angulo_SH = angulo_SH - 10;
-        } else {
+        }
+        else
+        {
             // Rotar 10° hacia 180°
             angulo_SH = angulo_SH + 10;
         }
     }
-    else if (abs(S2 - S4) > UMBRAL_SENSIBILIDAD) {
+    else if (abs(S2 - S4) > UMBRAL_SENSIBILIDAD)
+    {
         // Rotar servo horizontal
-        if (S2 > S4) {
+        if (S2 > S4)
+        {
             // Rotar 10° hacia 0°
             angulo_SH = angulo_SH + 10;
-        } else {
+        }
+        else
+        {
             // Rotar 10° hacia 180°
             angulo_SH = angulo_SH + 10;
         }
     }
-    (angulo_SV < 0)? angulo_SV = 0;
-    (angulo_SV > 180)? angulo_SV = 180;
-    (angulo_SH < 0)? angulo_SH = 0;
-    (angulo_SH > 180)? angulo_SH = 180;
+    (angulo_SV < 0)   ? angulo_SV = 0;
+    (angulo_SV > 180) ? angulo_SV = 180;
+    (angulo_SH < 0)   ? angulo_SH = 0;
+    (angulo_SH > 180) ? angulo_SH = 180;
 }

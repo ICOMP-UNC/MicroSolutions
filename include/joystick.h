@@ -21,14 +21,14 @@
 #include "config.h"
 
 /* Pin Definitions */
-#define PIN_EJE_X ((uint32_t)(1 << 24)) // P0[24]
-#define PIN_EJE_Y ((uint32_t)(1 << 25)) // P0[25]
-#define PIN_PULSADOR ((uint32_t)(1 << 10))  // P2[10]
+#define PIN_EJE_X    ((uint32_t)(1 << 24)) // P0[24]
+#define PIN_EJE_Y    ((uint32_t)(1 << 25)) // P0[25]
+#define PIN_PULSADOR ((uint32_t)(1 << 10)) // P2[10]
 
 /* Macros Definitions */
-#define MANUAL 1
+#define MANUAL     1
 #define AUTOMATICO 0
-#define MUESTRAS 10
+#define MUESTRAS   10
 
 /* Global variables Definitions */
 uint8_t modo = AUTOMATICO;

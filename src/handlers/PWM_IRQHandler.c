@@ -17,5 +17,4 @@
 /**
  * @brief PWM Interrupt Handler.
  */
-void PWM_IRQHandler(void)
-{}
+void PWM_IRQHandler(void) {}

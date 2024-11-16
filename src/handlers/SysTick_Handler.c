@@ -12,18 +12,18 @@
 #include <cr_section_macros.h> /* The cr_section_macros is specific to the MCUXpresso delivered toolchain */
 #endif
 
-#include "config.h"
-#include "ldr.h"
-#include "joystick.h"
-#include "servos.h"
 #include "bateria.h"
+#include "config.h"
+#include "joystick.h"
+#include "ldr.h"
+#include "servos.h"
 
 /**
  * @brief SysTick Interrupt Handler.
  */
 void SysTick_Handler(void)
 {
-    if(modo == AUTOMATICO)
+    if (modo == AUTOMATICO)
     {
         promediarValoresLDR();
         compararValoresLDR();

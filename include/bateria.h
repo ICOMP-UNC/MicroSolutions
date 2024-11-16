@@ -20,16 +20,16 @@
 
 /* Pin Definitions */
 #define PIN_TENSION_BATERIA ((uint32_t)(1 << 23)) // P0[23]
-#define PIN_LED_BATERIA ((uint32_t)(1 << 26)) // P0[26]
+#define PIN_LED_BATERIA     ((uint32_t)(1 << 26)) // P0[26]
 
 /* Macros Definitions */
-#define MUESTRAS 10
-#define TENSION_BATERIA_MIN 2.5
-#define TENSION_BATERIA_MAX 3.3
-#define RANGO_TENSION_BATERIA (TENSION_BATERIA_MAX-TENSION_BATERIA_MIN)
-#define TENSION_DAC_MIN 2.7
-#define TENSION_DAC_MAX 3.3
-#define RANGO_TENSION_DAC (TENSION_DAC_MAX-TENSION_DAC_MIN)
+#define MUESTRAS              10
+#define TENSION_BATERIA_MIN   2.5
+#define TENSION_BATERIA_MAX   3.3
+#define RANGO_TENSION_BATERIA (TENSION_BATERIA_MAX - TENSION_BATERIA_MIN)
+#define TENSION_DAC_MIN       2.7
+#define TENSION_DAC_MAX       3.3
+#define RANGO_TENSION_DAC     (TENSION_DAC_MAX - TENSION_DAC_MIN)
 
 /* Global variables Definitions */
 uint16_t tension_bateria[MUESTRAS] = {};

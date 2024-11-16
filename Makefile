@@ -8,7 +8,7 @@ SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
 		bateria.c \
-		joysick.c \
+		joystick.c \
 		ldr.c \
 		servos.c \
 		configADC.c \

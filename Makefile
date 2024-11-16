@@ -7,7 +7,7 @@
 SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
-		modules/bateria.c \
+		bateria.c \
 		modules/joysick.c \
 		modules/ldr.c \
 		modules/servos.c \

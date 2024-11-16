@@ -136,8 +136,8 @@ void compararValoresEjesJoystick(void)
         angulo_SV = angulo_SV - 10;
     }
     /* Verifico que los ángulos estén dentro del rango [0°, 180°] */
-    (angulo_SV < 0)   ? angulo_SV = 0;
-    (angulo_SV > 180) ? angulo_SV = 180;
-    (angulo_SH < 0)   ? angulo_SH = 0;
-    (angulo_SH > 180) ? angulo_SH = 180;
+    angulo_SV = (angulo_SV < 0) ? 0 : angulo_SV;
+    angulo_SV = (angulo_SV > 180) ? 180 : angulo_SV;
+    angulo_SH = (angulo_SH < 0) ? 0 : angulo_SH;
+    angulo_SH = (angulo_SH > 180) ? 180 : angulo_SH;
 }

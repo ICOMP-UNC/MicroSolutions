@@ -7,22 +7,22 @@
 SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
-		bateria.c \
-		joysick.c \
-		ldr.c \
-		servos.c \
-		configADC.c \
-		configDAC.c \
-		configExternalInterrupt.c \
-		configGPDMA.c \
-		configNVIC.c \
-		configPWM.c \
-		configSystick.c \
-		configTimers.c \
-		ADC_IRQHandler.c \
-		EINT0_IRQHandler.c \
-		PWM_IRQHandler.c \
-		Systick_Handler.c
+		modules/bateria.c \
+		modules/joysick.c \
+		modules/ldr.c \
+		modules/servos.c \
+		config/configADC.c \
+		config/configDAC.c \
+		config/configExternalInterrupt.c \
+		config/configGPDMA.c \
+		config/configNVIC.c \
+		config/configPWM.c \
+		config/configSystick.c \
+		config/configTimers.c \
+		handlers/ADC_IRQHandler.c \
+		handlers/EINT0_IRQHandler.c \
+		handlers/PWM_IRQHandler.c \
+		handlers/Systick_Handler.c
  
 	 
 # Define the name of the project

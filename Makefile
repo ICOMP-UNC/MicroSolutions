@@ -7,28 +7,28 @@
 SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
-		modules/bateria.c \
-		modules/joysick.c \
-		modules/ldr.c \
-		modules/servos.c \
-		config/configADC.c \
-		config/configDAC.c \
-		config/configExternalInterrupt.c \
-		config/configGPDMA.c \
-		config/configNVIC.c \
-		config/configPWM.c \
-		config/configSystick.c \
-		config/configTimers.c \
-		handlers/ADC_IRQHandler.c \
-		handlers/EINT0_IRQHandler.c \
-		handlers/PWM_IRQHandler.c \
-		handlers/Systick_Handler.c
+		bateria.c \
+		joysick.c \
+		ldr.c \
+		servos.c \
+		configADC.c \
+		configDAC.c \
+		configExternalInterrupt.c \
+		configGPDMA.c \
+		configNVIC.c \
+		configPWM.c \
+		configSystick.c \
+		configTimers.c \
+		ADC_IRQHandler.c \
+		EINT0_IRQHandler.c \
+		PWM_IRQHandler.c \
+		Systick_Handler.c
  
 	 
 # Define the name of the project
 # This will be the name of the final binary file
 
-PROJ_NAME=gates-of-survival
+PROJ_NAME=tp-final-ed3
 
 # You should not need to change anything below this line =D
 
@@ -75,6 +75,9 @@ BUILD_DIR=$(ROOT)/build
 $(shell mkdir -p $(BUILD_DIR))
 
 vpath %.c src
+vpath %.c src/config
+vpath %.c src/handlers
+vpath %.c src/modules
 vpath %.c $(ROOT)/lib/CMSISv2p00_LPC17xx/src 
 vpath %.c $(ROOT)/lib/CMSISv2p00_LPC17xx/drivers/src
 

@@ -91,12 +91,7 @@ OBJS = $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 .PHONY: drivers proj
 
-all: $(BUILD_DIRS) drivers proj
-
-BUILD_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/, modules config handlers)
-
-$(BUILD_DIRS):
-	mkdir -p $@
+all: drivers proj
 
 drivers:
 	$(MAKE) -C $(ROOT)/lib/CMSISv2p00_LPC17xx/drivers

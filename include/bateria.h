@@ -51,7 +51,7 @@
  * @brief Valores de tensión mínimo y máximo de salida del DAC.
  */
 #define TENSION_DAC_MIN 2.7
-#define TENSION_DAC_MIN 3.3
+#define TENSION_DAC_MAX 3.3
 /**
  * @def RANGO_TENSION_DAC
  * @brief Rango de tensión de trabajo para el DAC.

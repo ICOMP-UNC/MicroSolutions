@@ -72,10 +72,10 @@ void promediarValoresLDR(void)
  */
 void compararValoresLDR(void)
 {
-    if (abs(S1 - S2) > UMBRAL_SENSIBILIDAD)
+    if (abs(promedio_S1 - promedio_S2) > UMBRAL_SENSIBILIDAD)
     {
         /* Rotar servo vertical */
-        if (S1 > S2)
+        if (promedio_S1 > promedio_S2)
         {
             /* Rotar 10° hacia 0° */
             angulo_SV = angulo_SV - 10;
@@ -86,10 +86,10 @@ void compararValoresLDR(void)
             angulo_SV = angulo_SV + 10;
         }
     }
-    else if (abs(S3 - S4) > UMBRAL_SENSIBILIDAD)
+    else if (abs(promedio_S3 - promedio_S4) > UMBRAL_SENSIBILIDAD)
     {
         /* Rotar servo vertical */
-        if (S3 > S4)
+        if (promedio_S3 > promedio_S4)
         {
             /* Rotar 10° hacia 0° */
             angulo_SV = angulo_SV - 10;
@@ -101,10 +101,10 @@ void compararValoresLDR(void)
         }
     }
 
-    if (abs(S1 - S3) > UMBRAL_SENSIBILIDAD)
+    if (abs(promedio_S1 - promedio_S3) > UMBRAL_SENSIBILIDAD)
     {
         /* Rotar servo horizontal */
-        if (S1 > S3)
+        if (promedio_S1 > promedio_S3)
         {
             /* Rotar 10° hacia 0° */
             angulo_SH = angulo_SH - 10;
@@ -115,10 +115,10 @@ void compararValoresLDR(void)
             angulo_SH = angulo_SH + 10;
         }
     }
-    else if (abs(S2 - S4) > UMBRAL_SENSIBILIDAD)
+    else if (abs(promedio_S2 - promedio_S4) > UMBRAL_SENSIBILIDAD)
     {
         /* Rotar servo horizontal */
-        if (S2 > S4)
+        if (promedio_S2 > promedio_S4)
         {
             /* Rotar 10° hacia 0° */
             angulo_SH = angulo_SH + 10;

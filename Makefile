@@ -8,9 +8,21 @@ SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
 		bateria.c \
-		porton.c \
-		sensores.c \
-		usuarios.c
+		joysick.c \
+		ldr.c \
+		servos.c \
+		configADC.c \
+		configDAC.c \
+		configExternalInterrupt.c \
+		configGPDMA.c \
+		configNVIC.c \
+		configPWM.c \
+		configSystick.c \
+		configTimers.c \
+		ADC_IRQHandler.c \
+		EINT0_IRQHandler.c \
+		PWM_IRQHandler.c \
+		Systick_Handler.c
  
 	 
 # Define the name of the project

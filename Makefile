@@ -7,7 +7,7 @@
 SRCS =	newlib_stubs.c \
 system_LPC17xx.c \
 		main.c \
-		bateria.c \
+		modules/bateria.c \
 		modules/joysick.c \
 		modules/ldr.c \
 		modules/servos.c \
@@ -91,7 +91,12 @@ OBJS = $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 .PHONY: drivers proj
 
-all: drivers proj
+all: $(BUILD_DIRS) drivers proj
+
+BUILD_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/, modules config handlers)
+
+$(BUILD_DIRS):
+	mkdir -p $@
 
 drivers:
 	$(MAKE) -C $(ROOT)/lib/CMSISv2p00_LPC17xx/drivers

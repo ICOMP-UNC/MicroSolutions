@@ -22,7 +22,7 @@ system_LPC17xx.c \
 		ADC_IRQHandler.c \
 		EINT0_IRQHandler.c \
 		PWM_IRQHandler.c \
-		Systick_Handler.c
+		SysTick_Handler.c
  
 	 
 # Define the name of the project

@@ -18,6 +18,7 @@
 #endif
 
 #include <stddef.h>
+#include <stdlib.h>
 
 #include "lpc17xx_adc.h"
 #include "lpc17xx_dac.h"

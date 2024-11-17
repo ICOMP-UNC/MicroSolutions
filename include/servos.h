@@ -25,7 +25,7 @@
  * @brief Definición de pines modulos servos SG90.
  */
 #define PIN_SERVO_X ((uint32_t)(1 << 1)) /* P2[1] */
-#define PIN_SERVO_X ((uint32_t)(1 << 2)) /* P2[2] */
+#define PIN_SERVO_Y ((uint32_t)(1 << 2)) /* P2[2] */
 
 /* Macros Definitions */
 /**

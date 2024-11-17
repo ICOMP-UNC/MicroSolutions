@@ -69,11 +69,6 @@ uint16_t tension_bateria[MUESTRAS] = {};
  * El valor debe estar en el RANGO_TENSION_BATERIA.
  */
 uint16_t promedio_tension;
-/**
- * @brief Nivel de tensión de salida del DAC para regular intensidad de iluminación del led.
- * El valor debe estar en el RANGO_TENSION_DAC.
- */
-uint32_t dac_output;
 
 /**
  * @brief Initialize the GPIO pins.

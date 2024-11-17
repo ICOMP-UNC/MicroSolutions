@@ -60,7 +60,7 @@ void compararValoresTensionBateria(void)
     uint16_t tension_led =
         TENSION_DAC_MIN + ((tension_decimal - TENSION_BATERIA_MIN) / RANGO_TENSION_BATERIA) * RANGO_TENSION_DAC;
 
-    dac_output = (uint32_t)((tension_led / 3.3) * 4095);
+    dac_output = (uint32_t)((tension_led / 3.3) * 1023);
 }
 
 /**
@@ -70,4 +70,5 @@ void compararValoresTensionBateria(void)
 void actualizarDAC(void)
 {
     DAC_UpdateValue(LPC_DAC, dac_output);
+    configGPDMA(&dac_output);
 }

@@ -37,7 +37,7 @@ int main(void)
     configTimer0AndMatch();    /* Configure Timer0 */
     configADC();               /* Configure ADC */
     configDAC();               /* Configure DAC */
-    configGPDMA();             /* Configure DMA */
+    configGPDMA(&dac_output);  /* Configure DMA */
     configPWM();               /* Configure PWM */
     configNVIC();              /* Configure NVIC - Seteo de prioridades y hablitaciones */
 

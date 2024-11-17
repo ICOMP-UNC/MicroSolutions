@@ -48,12 +48,12 @@ void configTimer0AndMatch(void)
     TIM_Init(LPC_TIM0, TIM_TIMER_MODE, &timerCfg);
 
     /* Configure Match0.1 channel for ADC */
-    match_cfg_struct.MatchChannel = (uint8_t)(1);
-    match_cfg_struct.IntOnMatch = DISABLE;
-    match_cfg_struct.StopOnMatch = DISABLE;
-    match_cfg_struct.ResetOnMatch = ENABLE;
-    match_cfg_struct.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
-    match_cfg_struct.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); /* Match cada 100 milisegundos */
+    matchCfg.MatchChannel = (uint8_t)(1);
+    matchCfg.IntOnMatch = DISABLE;
+    matchCfg.StopOnMatch = DISABLE;
+    matchCfg.ResetOnMatch = ENABLE;
+    matchCfg.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
+    matchCfg.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); /* Match cada 100 milisegundos */
     TIM_ConfigMatch(LPC_TIM0, &matchCfg);
 
     TIM_Cmd(LPC_TIM0, ENABLE); /* Start Timer0 */

@@ -48,17 +48,17 @@
 /**
  * @brief Arrays que guardan las muestras de tensión de los sensores LDR tomadas por el ADC.
  */
-uint16_t ldr_S1[MUESTRAS] = {};
-uint16_t ldr_S2[MUESTRAS] = {};
-uint16_t ldr_S3[MUESTRAS] = {};
-uint16_t ldr_S4[MUESTRAS] = {};
+extern uint16_t ldr_S1[MUESTRAS] = {};
+extern uint16_t ldr_S2[MUESTRAS] = {};
+extern uint16_t ldr_S3[MUESTRAS] = {};
+extern uint16_t ldr_S4[MUESTRAS] = {};
 /**
  * @brief Valores promedios de las muestras de tensión de los sensores LDR tomadas por el ADC.
  */
-uint16_t promedio_S1;
-uint16_t promedio_S2;
-uint16_t promedio_S3;
-uint16_t promedio_S4;
+extern uint16_t promedio_S1;
+extern uint16_t promedio_S2;
+extern uint16_t promedio_S3;
+extern uint16_t promedio_S4;
 
 /**
  * @brief Initialize the GPIO pins.

@@ -27,6 +27,11 @@
 #define TRUE  1
 #define FALSE 0
 
+/* Global variables Declarations */
+angulo_SV = 90;
+angulo_SH = 90;
+dac_output = 1023;
+
 int main(void)
 {
     SystemInit(); /* Initialize the system clock (default: 100 MHz) */

@@ -46,13 +46,13 @@
  * @brief Guardan los valores de los angulos de posición de los servos horizontal y vertical.
  * Inician en posición de 90°
  */
-uint8_t angulo_SV = 90;
-uint8_t angulo_SH = 90;
+extern uint8_t angulo_SV;
+extern uint8_t angulo_SH;
 /**
  * @brief Nivel de tensión de salida del DAC para regular intensidad de iluminación del led.
  * El valor debe estar en el RANGO_TENSION_DAC.
  */
-uint32_t dac_output = 1023;
+extern uint32_t dac_output;
 /**
  * @brief Initialize systick configuration
  */

@@ -52,19 +52,19 @@
  * @brief Determina el modo de orientación del panel solar.
  * Puede tomar el valor MANUL o AUTOMATICO
  */
-uint8_t modo = AUTOMATICO;
+extern uint8_t modo = AUTOMATICO;
 /**
  * @brief Arrays que guardan las muestras de tensión de los ejes x e y
  * del modulo joystick tomadas por el ADC.
  */
-uint16_t eje_x[MUESTRAS] = {};
-uint16_t eje_y[MUESTRAS] = {};
+extern uint16_t eje_x[MUESTRAS] = {};
+extern uint16_t eje_y[MUESTRAS] = {};
 /**
  * @brief Valores promedios de las muestras de tensión de los ejes x e y
  * del modulo joystick tomadas por el ADC.
  */
-uint16_t promedio_eje_x;
-uint16_t promedio_eje_y;
+extern uint16_t promedio_eje_x;
+extern uint16_t promedio_eje_y;
 
 /**
  * @brief Initialize the GPIO pins.

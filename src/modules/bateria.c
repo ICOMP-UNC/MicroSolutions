@@ -7,6 +7,9 @@
 
 #include "bateria.h"
 
+uint16_t tension_bateria[MUESTRAS] = {};
+uint16_t promedio_tension;
+
 /**
  * @brief Initialize the GPIO pins.
  */

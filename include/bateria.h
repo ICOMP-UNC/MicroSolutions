@@ -63,7 +63,7 @@
  * @brief Array con las muestras de tensión de la batería tomadas por el ADC.
  * Los valores deben estar en el RANGO_TENSION_BATERIA.
  */
-extern uint16_t tension_bateria[MUESTRAS] = {};
+extern uint16_t tension_bateria[MUESTRAS];
 /**
  * @brief Promedio de tensión de la batería de las muestras tomadas por el ADC.
  * El valor debe estar en el RANGO_TENSION_BATERIA.

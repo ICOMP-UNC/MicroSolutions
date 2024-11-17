@@ -135,7 +135,7 @@ void compararValoresLDR(void)
         if (promedio_S2 > promedio_S4)
         {
             /* Rotar 10° hacia 0° */
-            angulo_SH = angulo_SH + 10;
+            angulo_SH = angulo_SH - 10;
         }
         else
         {

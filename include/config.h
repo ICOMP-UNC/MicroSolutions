@@ -80,7 +80,7 @@ void configDAC(void);
 /**
  * @brief Initialize DMA configuration
  */
-void configGPDMA(void);
+void configGPDMA(uint32_t*);
 
 /**
  * @brief Initialize PWM configuration

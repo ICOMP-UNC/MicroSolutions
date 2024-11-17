@@ -19,12 +19,16 @@ uint16_t promedio_S3;
 uint16_t promedio_S4;
 
 /**
- * @brief Initialize the GPIO pins.
+ * @brief Initialize the LDR pins.
+ * LDR S1: ADC0[4]: P1[30]
+ * LDR S2: ADC0[5]: P1[31]
+ * LDR S3: ADC0[6]: PO[3]
+ * LDR S4: ADC0[7]: PO[2]
  */
 void configPinLDR(void)
 {
     PINSEL_CFG_Type pinCfg;
-
+    /* Configuración pines ADC para los 4 LDR */
     pinCfg.Portnum = PINSEL_PORT_1;
     pinCfg.Funcnum = PINSEL_FUNC_2; /* Function number is 2 (ADC) */
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;

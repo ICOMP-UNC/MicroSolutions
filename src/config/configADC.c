@@ -23,7 +23,7 @@
 #define ADC_FREQ 100000 /* ADC frequency in 100 kHz */
 
 /**
- * @brief Initialize ADC configuration
+ * @brief Initialize ADC configuration.
  */
 void configADC(void)
 {

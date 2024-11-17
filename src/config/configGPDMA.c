@@ -39,7 +39,7 @@ GPDMA_Channel_CFG_Type GPDMACfg;
 GPDMA_LLI_Type DMA_LLI_Struct;
 
 /**
- * @brief Initialize DMA configuration
+ * @brief Initialize DMA configuration.
  */
 void configGPDMA(uint32_t* valor)
 {
@@ -58,7 +58,7 @@ void configGPDMA(uint32_t* valor)
     GPDMACfg.ChannelNum = DMA_CHANNEL_ZERO;         /* Use channel 0 */
     GPDMACfg.SrcMemAddr = (uint32_t)valor;          /* Source: DAC waveform table */
     GPDMACfg.DstMemAddr = 0;                        /* No memory destination (peripheral) */
-    GPDMACfg.TransferSize = DMA_SIZE;               /* Transfer size: 60 samples */
+    GPDMACfg.TransferSize = DMA_SIZE;               /* Transfer size: 1 sample */
     GPDMACfg.TransferWidth = 0;                     /* Not used */
     GPDMACfg.TransferType = GPDMA_TRANSFERTYPE_M2P; /* Memory-to-Peripheral transfer */
     GPDMACfg.SrcConn = 0;                           /* Source is memory */
@@ -67,4 +67,6 @@ void configGPDMA(uint32_t* valor)
 
     /* Apply DMA configuration */
     GPDMA_Setup(&GPDMACfg);
+    /* Enable DMA channel */
+    GPDMA_ChannelCmd(0, ENABLE);
 }

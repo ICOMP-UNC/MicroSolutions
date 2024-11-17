@@ -17,12 +17,15 @@ uint16_t promedio_eje_x;
 uint16_t promedio_eje_y;
 
 /**
- * @brief Initialize the GPIO pins.
+ * @brief Initialize the joystick pins.
+ * Eje X joystick: ADC0[1]: PO[24]
+ * Eje Y joystick: ADC0[2]: PO[25]
+ * Pulsador joystick: EINT0: P2[10]
  */
 void configPinJoystick(void)
 {
     PINSEL_CFG_Type pinCfg;
-
+    /* Configuración pines ADC para los eje x e y */
     pinCfg.Portnum = PINSEL_PORT_0;
     pinCfg.Funcnum = PINSEL_FUNC_1; /* Function number is 1 (ADC) */
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;
@@ -33,9 +36,10 @@ void configPinJoystick(void)
         pinCfg.Pinnum = pin;
         PINSEL_ConfigPin(&pinCfg);
     }
-
+    /* Configuración pin EINT0 para el pulsador */
     pinCfg.Portnum = PINSEL_PORT_2;
     pinCfg.Pinnum = PINSEL_PIN_10;
+    pinCfg.Pinmode = PINSEL_PINMODE_PULLUP;
     PINSEL_ConfigPin(&pinCfg);
 }
 

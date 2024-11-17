@@ -15,7 +15,7 @@
 #include "config.h"
 
 /**
- * @brief Initialize the external interrupt
+ * @brief Initialize the external interrupt.
  */
 void configExternalInterrupt(void)
 {

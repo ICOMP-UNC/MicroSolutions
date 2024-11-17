@@ -44,7 +44,7 @@
 #define PWM_CHANNEL_3 ((uint8_t)(3))
 
 /**
- * @brief Initialize PWM configuration
+ * @brief Initialize PWM configuration.
  */
 void configPWM(void)
 {

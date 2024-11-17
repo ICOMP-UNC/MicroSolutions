@@ -34,7 +34,7 @@
 #define HZ 1000000
 
 /**
- * @brief Initialize DAC configuration
+ * @brief Initialize DAC configuration.
  */
 void configDAC(void)
 {
@@ -42,8 +42,8 @@ void configDAC(void)
     DAC_CONVERTER_CFG_Type DACCfg;
     uint32_t update_interval;
     /* Configure DAC settings */
-    DACCfg.CNT_ENA = SET; /* Enable DAC counter mode (timeout mode) */
-    DACCfg.DMA_ENA = SET; /*  Disable DAC DMA mode */
+    DACCfg.CNT_ENA = RESET; /* Disable DAC counter mode (timeout mode) */
+    DACCfg.DMA_ENA = SET;   /*  Enable DAC DMA mode */
     /* Calculate sample update interval for the desired waveform frequency */
     update_interval = (DAC_FREQ * HZ) / (WAVE_FREQUENCY);
     DAC_SetDMATimeOut(LPC_DAC, update_interval); /* Set the DAC timeout between samples */

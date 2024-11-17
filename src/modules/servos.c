@@ -8,12 +8,14 @@
 #include "servos.h"
 
 /**
- * @brief Initialize the GPIO pins.
+ * @brief Initialize the servos pins.
+ * Servo eje x: PWM1[2]: P2[1]
+ * Servo eje y: PWM1[3]: P2[2]
  */
 void configPinServos(void)
 {
     PINSEL_CFG_Type pinCfg;
-
+    /* Configuración pines PMW1 para los dos servos */
     pinCfg.Portnum = PINSEL_PORT_2;
     pinCfg.Funcnum = PINSEL_FUNC_1; /* Function number is 1 (PWM1) */
     pinCfg.Pinmode = PINSEL_PINMODE_TRISTATE;

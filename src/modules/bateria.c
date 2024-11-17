@@ -12,13 +12,15 @@ uint16_t tension_bateria[MUESTRAS] = {};
 uint16_t promedio_tension;
 
 /**
- * @brief Initialize the GPIO pins.
+ * @brief Initialize the batery pins.
+ * Voltaje batería: ADC0[0]: PO[23]
+ * LED batería: DAC[AOUT]: PO[26]
  */
 void configPinBateria(void)
 {
     PINSEL_CFG_Type pinCfg;
 
-    // Configuracion pin ADC0[0]
+    /* Configuración pin ADC para voltaje batería */
     pinCfg.Portnum = PINSEL_PORT_0;
     pinCfg.Pinnum = PINSEL_PIN_23;
     pinCfg.Funcnum = PINSEL_FUNC_1; /* Function number is 1 (ADC) */
@@ -27,7 +29,7 @@ void configPinBateria(void)
 
     PINSEL_ConfigPin(&pinCfg);
 
-    // Configuracion pin DAC
+    /* Configuración pin DAC para LED batería */
     pinCfg.Pinnum = PINSEL_PIN_26;
     pinCfg.Funcnum = PINSEL_FUNC_2; /* Function number is 2 (AOUT) */
 

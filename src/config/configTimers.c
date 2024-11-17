@@ -35,7 +35,7 @@
 #define CANT_MS 100
 
 /**
- * @brief Configure Timer0 to trigger an interrupt every 60 seconds.
+ * @brief Configure Timer0 to trigger an interrupt every 100 miliseconds.
  */
 void configTimer0AndMatch(void)
 {

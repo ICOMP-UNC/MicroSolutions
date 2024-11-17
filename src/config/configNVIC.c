@@ -15,8 +15,9 @@
 #include "config.h"
 
 /**
- * @brief Initialize NVIC configuration
+ * @brief Initialize NVIC configuration.
  * Setea las prioridades para las interrupciones utilizadas
+ * y habilita las interrupciones correspondientes.
  */
 void configNVIC(void)
 {

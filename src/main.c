@@ -41,14 +41,14 @@ int main(void)
     configPinServos();   /* Configure servos pins */
     configPinBateria();  /* Configure bateria pins */
 
-    configSystick();           /* Configure SysTick timer */
+    configSysTick();           /* Configure SysTick timer */
     configExternalInterrupt(); /* Configure external interrupt */
     configTimer0AndMatch();    /* Configure Timer0 */
     configADC();               /* Configure ADC */
     configDAC();               /* Configure DAC */
     configGPDMA(&dac_output);  /* Configure DMA */
     configPWM();               /* Configure PWM */
-    configNVIC();              /* Configure NVIC - Seteo de prioridades y hablitaciones */
+    configNVIC();              /* Configure NVIC - Seteo de prioridades y habilitaciones */
 
     while (TRUE)
     {

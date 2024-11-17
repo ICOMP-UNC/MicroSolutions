@@ -20,8 +20,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#include "core_cm3.h"
-
 #include "lpc17xx_adc.h"
 #include "lpc17xx_dac.h"
 #include "lpc17xx_exti.h"

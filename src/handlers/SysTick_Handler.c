@@ -36,8 +36,8 @@ void SysTick_Handler(void)
 
     actualizarPWM();
 
-    promediarValoresBateria();
-    compararValoresBateria();
+    promediarValoresTensionBateria();
+    compararValoresTensionBateria();
     actualizarDAC();
 
     SYSTICK_ClearCounterFlag();

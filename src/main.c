@@ -47,7 +47,7 @@ int main(void)
 
     while (TRUE)
     {
-        __wfi();
+        __asm("nop");
     }
 
     return 0; /* Should never reach this */

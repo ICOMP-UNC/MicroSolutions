@@ -12,7 +12,11 @@
 #include <cr_section_macros.h> /* The cr_section_macros is specific to the MCUXpresso delivered toolchain */
 #endif
 
+#include "bateria.h"
 #include "config.h"
+#include "joystick.h"
+#include "ldr.h"
+#include "servos.h"
 
 /* Macros Definitions */
 /**

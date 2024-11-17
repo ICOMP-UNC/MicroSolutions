@@ -9,6 +9,13 @@
 
 #include "joystick.h"
 
+/* Global variables Declarations */
+uint8_t modo = AUTOMATICO;
+uint16_t eje_x[MUESTRAS] = {};
+uint16_t eje_y[MUESTRAS] = {};
+uint16_t promedio_eje_x;
+uint16_t promedio_eje_y;
+
 /**
  * @brief Initialize the GPIO pins.
  */

@@ -8,6 +8,16 @@
 
 #include "ldr.h"
 
+/* Global variables Declarations */
+uint16_t ldr_S1[MUESTRAS] = {};
+uint16_t ldr_S2[MUESTRAS] = {};
+uint16_t ldr_S3[MUESTRAS] = {};
+uint16_t ldr_S4[MUESTRAS] = {};
+uint16_t promedio_S1;
+uint16_t promedio_S2;
+uint16_t promedio_S3;
+uint16_t promedio_S4;
+
 /**
  * @brief Initialize the GPIO pins.
  */

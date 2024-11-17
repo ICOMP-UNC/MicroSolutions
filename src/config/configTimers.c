@@ -48,7 +48,7 @@ void configTimer0AndMatch(void)
     TIM_Init(LPC_TIM0, TIM_TIMER_MODE, &timerCfg);
 
     /* Configure Match0.1 channel for ADC */
-    match_cfg_struct.MatchChannel = 1;
+    match_cfg_struct.MatchChannel = (uint8_t)(1);
     match_cfg_struct.IntOnMatch = DISABLE;
     match_cfg_struct.StopOnMatch = DISABLE;
     match_cfg_struct.ResetOnMatch = ENABLE;

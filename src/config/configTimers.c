@@ -32,7 +32,7 @@
  * @brief Cantidad de milisegudnos.
  * Valor expresado en milisegundos
  */
-#define CANT_MS 100
+#define CANT_MS 10
 
 /**
  * @brief Configure Timer0 to trigger an interrupt every 100 miliseconds.
@@ -53,7 +53,7 @@ void configTimer0AndMatch(void)
     matchCfg.StopOnMatch = DISABLE;
     matchCfg.ResetOnMatch = ENABLE;
     matchCfg.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
-    matchCfg.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); /* Match cada 100 milisegundos */
+    matchCfg.MatchValue = (uint32_t)((MILISECOND * CANT_MS) / PRESCALE_VALUE); /* Match cada 10 milisegundos */
     TIM_ConfigMatch(LPC_TIM0, &matchCfg);
 
     TIM_Cmd(LPC_TIM0, ENABLE); /* Start Timer0 */

@@ -20,14 +20,14 @@
  * @brief Intervalo de interrupción del Systick.
  * Valor expresado en milisegundos.
  */
-#define SYSTICK_TIME 1000
+#define SYSTICK_TIME 100
 
 /**
  * @brief Initialize systick configuration.
  */
 void configSysTick(void)
 {
-    SYSTICK_InternalInit(SYSTICK_TIME); /* Initialize the SysTick timer with a time interval of 1000 ms */
+    SYSTICK_InternalInit(SYSTICK_TIME); /* Initialize the SysTick timer with a time interval of 100 ms */
     SYSTICK_IntCmd(ENABLE);             /* Enable SysTick interrupt */
     SYSTICK_Cmd(ENABLE);                /* Enable SysTick counter */
 }

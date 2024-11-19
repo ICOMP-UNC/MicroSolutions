@@ -56,7 +56,7 @@ extern uint32_t dac_output;
 /**
  * @brief Initialize systick configuration
  */
-void configSystick(void);
+void configSysTick(void);
 
 /**
  * @brief Initialize the external interrupt

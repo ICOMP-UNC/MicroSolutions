@@ -16,16 +16,16 @@ MEMORY
 }
 
 _vRamTop = 0x10000000 + 0x8000;
-PROVIDE(__LPC_Checksum = 0 - 
-        (_vStackTop 
-        + (Reset_Handler + 1) 
-        + (NMI_Handler + 1) 
+PROVIDE(__LPC_Checksum = 0 -
+        (_vStackTop
+        + (Reset_Handler + 1)
+        + (NMI_Handler + 1)
         + (HardFault_Handler + 1)
         + (( DEFINED(MemManage_Handler) ? MemManage_Handler : 0 ) + 1)   /* MemManage_Handler may not be defined */ 
         + (( DEFINED(BusFault_Handler) ? BusFault_Handler : 0 ) + 1)     /* BusFault_Handler may not be defined */ 
         + (( DEFINED(UsageFault_Handler) ? UsageFault_Handler : 0 ) + 1) /* UsageFault_Handler may not be defined */ 
         ) );
-             
+
 ENTRY(ResetISR)
 
 SECTIONS
@@ -87,8 +87,8 @@ SECTIONS
 	This space can be reclaimed for Production Builds.
 */
 	_vStackTop = _vRamTop - 16;
-	
-     
+
+
 	.ETHRAM :
 	{
 	} > AHBRAM0

@@ -17,14 +17,14 @@ system_LPC17xx.c \
 		configGPDMA.c \
 		configNVIC.c \
 		configPWM.c \
-		configSystick.c \
+		configSysTick.c \
 		configTimers.c \
 		ADC_IRQHandler.c \
 		EINT0_IRQHandler.c \
 		PWM_IRQHandler.c \
 		SysTick_Handler.c
- 
-	 
+
+
 # Define the name of the project
 # This will be the name of the final binary file
 
@@ -57,12 +57,12 @@ PRETTY_CC=${QUIET_CC}${CC}
 CFLAGS  = -g  -O0 -Wall -Tlpc17xx.ld
 # Define the device we are using
 CFLAGS += -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))"
-CFLAGS += -D PACK_STRUCT_END=__attribute\(\(packed\)\) 
-CFLAGS += -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\)	
+CFLAGS += -D PACK_STRUCT_END=__attribute\(\(packed\)\)
+CFLAGS += -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\)
 CFLAGS += -D__USE_CMSIS
-CFLAGS += -mthumb -mcpu=cortex-m3 
+CFLAGS += -mthumb -mcpu=cortex-m3
 CFLAGS += -fno-builtin -mfloat-abi=soft	-ffunction-sections -fdata-sections -fmessage-length=0 -funsigned-char
- 
+
 ODFLAGS	= -x
 LDFLAGS += -Wl,-Map,$(PROJ_NAME).map
 
@@ -78,10 +78,10 @@ vpath %.c src
 vpath %.c src/config
 vpath %.c src/handlers
 vpath %.c src/modules
-vpath %.c $(ROOT)/lib/CMSISv2p00_LPC17xx/src 
+vpath %.c $(ROOT)/lib/CMSISv2p00_LPC17xx/src
 vpath %.c $(ROOT)/lib/CMSISv2p00_LPC17xx/drivers/src
 
-CFLAGS += -I$(ROOT)/include 
+CFLAGS += -I$(ROOT)/include
 CFLAGS += -I$(ROOT)/lib/CMSISv2p00_LPC17xx/include
 CFLAGS += -I$(ROOT)/lib/CMSISv2p00_LPC17xx/drivers/include
 
@@ -101,7 +101,7 @@ drivers:
 	${QUIET_NOTICE}
 	@echo "Done building library for drivers"
 	${QUIET_ENDCOLOR}
-	
+
 proj: 	$(BUILD_DIR)/$(PROJ_NAME).elf
 
 $(BUILD_DIR)/$(PROJ_NAME).elf: $(OBJS)

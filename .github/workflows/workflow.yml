@@ -19,6 +19,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Intenta restaurar el compilador desde la caché
+      - name: Cache ARM GCC
+        uses: actions/cache@v3
+        with:
+          path: ~/.gcc-arm-none-eabi
+          key: arm-gcc-${{ runner.os }}
+          restore-keys: |
+            arm-gcc-
       - name: Install Arm GNU Toolchain (arm-none-eabi-gcc)
         uses: carlosperate/arm-none-eabi-gcc-action@v1
         with:

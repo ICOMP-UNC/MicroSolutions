@@ -1,0 +1,59 @@
+// main.c
+/*
+ * @file main.c
+ * @brief Main file for the project
+ */
+
+#ifdef __USE_CMSIS
+#include "LPC17xx.h"
+#endif
+
+#ifdef __USE_MCUEXPRESSO
+#include <cr_section_macros.h> /* The cr_section_macros is specific to the MCUXpresso delivered toolchain */
+#endif
+
+#include "bateria.h"
+#include "config.h"
+#include "joystick.h"
+#include "ldr.h"
+#include "servos.h"
+
+/* Macros Definitions */
+/**
+ * @def TRUE
+ * @def FALSE
+ * @brief Logic Values Definitions.
+ */
+#define TRUE  1
+#define FALSE 0
+
+/* Global variables Declarations */
+uint8_t angulo_SV = 90;
+uint8_t angulo_SH = 90;
+uint32_t dac_output = 1023;
+
+int main(void)
+{
+    SystemInit(); /* Initialize the system clock (default: 100 MHz) */
+
+    configPinLDR();      /* Configure LDR pins */
+    configPinJoystick(); /* Configure joystick pins */
+    configPinServos();   /* Configure servos pins */
+    configPinBateria();  /* Configure bateria pins */
+
+    configSysTick();           /* Configure SysTick timer */
+    configExternalInterrupt(); /* Configure external interrupt */
+    configTimer0AndMatch();    /* Configure Timer0 */
+    configADC();               /* Configure ADC */
+    configDAC();               /* Configure DAC */
+    configGPDMA(&dac_output);  /* Configure DMA */
+    configPWM();               /* Configure PWM */
+    configNVIC();              /* Configure NVIC - Seteo de prioridades y habilitaciones */
+
+    while (TRUE)
+    {
+        __asm("nop");
+    }
+
+    return 0; /* Should never reach this */
+}
